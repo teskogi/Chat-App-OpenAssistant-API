@@ -59,7 +59,7 @@ def main():
         
         prompt = PromptTemplate(template=template, input_variables=["question"])
 
-        llm=HuggingFaceHub(repo_id=os.getenv('repo_id'), model_kwargs={"max_new_tokens":os.getenv('max_new_tokens')})
+        llm=HuggingFaceHub(repo_id=os.getenv('repo_id'), model_kwargs={"max_new_tokens":int(os.getenv('max_new_tokens'))})
 
         llm_chain=LLMChain(
             llm=llm,
