@@ -4,6 +4,7 @@ from streamlit_extras.colored_header import colored_header
 from streamlit_extras.add_vertical_space import add_vertical_space
 from langchain import PromptTemplate, HuggingFaceHub, LLMChain
 from dotenv import load_dotenv
+import os
 
 # load the Environment Variables. 
 load_dotenv()
@@ -58,7 +59,7 @@ def main():
         
         prompt = PromptTemplate(template=template, input_variables=["question"])
 
-        llm=HuggingFaceHub(repo_id="OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5", model_kwargs={"max_new_tokens":1200})
+        llm=HuggingFaceHub(repo_id=os.getenv('repo_id'), model_kwargs={"max_new_tokens":os.getenv('max_new_tokens')})
 
         llm_chain=LLMChain(
             llm=llm,
