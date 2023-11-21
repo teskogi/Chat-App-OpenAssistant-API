@@ -54,8 +54,7 @@ def main():
     def chain_setup():
 
 
-        template = """<|prompter|>{question}<|endoftext|>
-        <|assistant|>"""
+        template = os.getenv('template')
         
         prompt = PromptTemplate(template=template, input_variables=["question"])
 
