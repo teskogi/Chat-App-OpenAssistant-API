@@ -18,7 +18,7 @@ with st.sidebar:
     This app is an LLM-powered chatbot built using:
     - [Streamlit](https://streamlit.io/)
     - [LangChain](https://python.langchain.com/)
-    - [OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5](https://huggingface.co/OpenAssistant/oasst-sft-4-pythia-12b-epoch-3.5) LLM model
+    '''+'- ['+os.getenv('repo_id')+'](https://huggingface.co/'+os.getenv('repo_id')+') LLM model'+'''
 
     ''')
     add_vertical_space(3)
